@@ -1,5 +1,8 @@
 #include<iostream>
 #include<vector>
+#include<iomanip>
+#include<cstdlib>
+#include<time.h>
 // float bezier_ith_basis(int p, float xi, int i);
 
 typedef std::vector<float> vect;
@@ -35,11 +38,16 @@ private:
 public:
     bezier(int);
     bezier();
+    bezier(const Matrix& cps_in);
     ~bezier();
     float ith_basis(float xi, int i);
-    vect all_basis(float xi);
-    Matrix all_basis_range(float start, float end, int divs);
-    
+    vect basis(float xi);
+    Matrix basis(float start, float end, int divs);
+    void display_cps(void);
+    bool check_ctrl_pnts(const Matrix& cps_in);
+    void display(void);
+    vect evaluate(float xi);
+    Matrix evaluate(float lower, float upper, float divs);
 };
 
 bezier::bezier(int p)
@@ -52,11 +60,52 @@ bezier::bezier()
     degree = 2;
 }
 
+bezier::bezier(const Matrix& cps_in)
+{
+    bool valid = check_ctrl_pnts(cps_in);
+    if (!valid){
+        throw "Please enter valid control points.";
+    }
+    else
+    {
+        int rows = cps_in.size();
+        Ctrl_Pnts.reserve(rows*2);
+        for (int i = 0; i < rows; i++)
+        {
+            Ctrl_Pnts.emplace_back(vect());
+            for (int j = 0; j < 2; j++)
+            {
+                Ctrl_Pnts[i].emplace_back(cps_in[i][j]);
+            }  
+        }
+        degree = rows-1;        
+    }
+}
+
+bool bezier::check_ctrl_pnts(const Matrix& cps_in){
+    int rows = cps_in.size();
+    if (rows < 2){
+        // throw "Number of control points should be at least 2\n";
+        return false;
+    }
+    // int cols = cps_in[0].size();
+    int coords = 2;
+    for (const auto& i:cps_in)
+    {
+        if (i.size() < coords)
+        {
+            // throw "Inconsistant control points are entered\n";
+            return false;
+        }
+    }
+    return true;
+}
+
 float bezier::ith_basis(float xi, int i){
     return bezier_ith_basis(degree, xi, i);
 }
 
-vect bezier::all_basis(float xi){
+vect bezier::basis(float xi){
     vect N;
     N.reserve(degree+1);
     for (int i = 0; i < degree+1; i++){
@@ -65,7 +114,7 @@ vect bezier::all_basis(float xi){
     return N;
 }
 
-Matrix bezier::all_basis_range(float lower, float upper, int divs)
+Matrix bezier::basis(float lower, float upper, int divs)
 {
     if (divs < 1){
         throw "Number of divisions can't be less than 1";
@@ -88,23 +137,82 @@ Matrix bezier::all_basis_range(float lower, float upper, int divs)
 
 bezier::~bezier()
 {
-    std::cout << "Destructor \n";
+    std::cout << "Class is Destructor \n";
 }
 
-int main(){
-    bezier b(3);
-    float ni = b.ith_basis(0.5, 3);
-    std::cout << ni << "  <-\n";
-
-    Matrix M;
-    M = b.all_basis_range(0,1,4);    
-    for (const auto& i : M)
+void bezier::display_cps(void){
+    // int rows  = Ctrl_Pnts.size();
+    // int cols  = Ctrl_Pnts[0].size();
+    for (const auto& r: Ctrl_Pnts)
     {
-        for (const auto& j : i)
+        for (const auto& c: r)
         {
-            std::cout << j << "   ";
+            std::cout << c << std::setw(10);
         }
-        std::cout << "\n";
+        std::cout << '\n';
     }
-    
+}
+
+void bezier::display(void){
+    std::cout << "Bezier curve with degree : " << degree << "\n";
+    std::cout << "Control point coordinateds : \n";
+    display_cps();
+}
+
+vect bezier::evaluate(float xi){
+    vect N = basis(xi);
+    vect coords;
+    coords.reserve(2);
+    float sum;
+    for (int x = 0; x < 2; x++)
+    {
+        sum = 0;
+        for (int i = 0; i < degree+1; i++)
+        {
+            sum += N[i] * Ctrl_Pnts[i][x];   
+        }
+        coords.emplace_back(sum);
+    }  
+    return coords; 
+}
+
+Matrix bezier::evaluate(float lower, float upper, float divs){
+    if (divs < 1){
+        throw "Number of divisions can't be less than 1";
+    }
+    Matrix pnt_arr;
+    float xi = lower;
+    float step_len = (upper-lower)/divs;
+    int pnts = divs+1;
+    pnt_arr.reserve(2*pnts);
+    for (int i = 0; i < pnts; i++)
+    {
+        vect coords = evaluate(xi);
+        pnt_arr.emplace_back(coords);
+        xi = xi + step_len;
+    }  
+    return pnt_arr; 
+}
+
+
+
+int main(){
+    Matrix cps;
+    cps = {{1,1},{3,2},{2,1}};
+    bezier b(cps);
+    b.display();
+    vect crds = b.evaluate(0);
+    std::cout << "Coordinates at xi = 0 : ";
+    for (const auto& i : crds)
+    {
+        std::cout << i << "    "; 
+    }
+    std::cout << "\n";
+    crds = b.evaluate(1);
+    std::cout << "Coordinates at xi = 1 : ";
+    for (const auto& i : crds)
+    {
+        std::cout << i << "    "; 
+    }
+    std::cout << "\n";   
 }
