@@ -1,13 +1,6 @@
-#include<iostream>
-#include<vector>
-#include<iomanip>
-#include<cstdlib>
-#include<time.h>
-// float bezier_ith_basis(int p, float xi, int i);
 
-typedef std::vector<float> vect;
+#include "bezier.h"
 
-typedef std::vector<std::vector<float>> Matrix;
 
 // i^th basis function.
 float bezier_ith_basis(int p, float xi, int i)
@@ -30,37 +23,19 @@ float bezier_ith_basis(int p, float xi, int i)
     }
 }
 
-class bezier
-{
-private:
-    int degree;
-    Matrix Ctrl_Pnts;
-public:
-    bezier(int);
-    bezier();
-    bezier(const Matrix& cps_in);
-    ~bezier();
-    float ith_basis(float xi, int i);
-    vect basis(float xi);
-    Matrix basis(float start, float end, int divs);
-    void display_cps(void);
-    bool check_ctrl_pnts(const Matrix& cps_in);
-    void display(void);
-    vect evaluate(float xi);
-    Matrix evaluate(float lower, float upper, float divs);
-};
-
 bezier::bezier(int p)
 {
     degree = p;
+    Ctrl_Pnts = RondomMatrix(degree+1, 2);
 }
 
 bezier::bezier()
 {
     degree = 2;
+    Ctrl_Pnts = RondomMatrix(degree+1, 2);
 }
 
-bezier::bezier(const Matrix& cps_in)
+bezier::bezier(const matrix& cps_in)
 {
     bool valid = check_ctrl_pnts(cps_in);
     if (!valid){
@@ -82,7 +57,7 @@ bezier::bezier(const Matrix& cps_in)
     }
 }
 
-bool bezier::check_ctrl_pnts(const Matrix& cps_in){
+bool bezier::check_ctrl_pnts(const matrix& cps_in){
     int rows = cps_in.size();
     if (rows < 2){
         // throw "Number of control points should be at least 2\n";
@@ -101,6 +76,7 @@ bool bezier::check_ctrl_pnts(const Matrix& cps_in){
     return true;
 }
 
+
 float bezier::ith_basis(float xi, int i){
     return bezier_ith_basis(degree, xi, i);
 }
@@ -114,12 +90,12 @@ vect bezier::basis(float xi){
     return N;
 }
 
-Matrix bezier::basis(float lower, float upper, int divs)
+matrix bezier::basis(float lower, float upper, int divs)
 {
     if (divs < 1){
         throw "Number of divisions can't be less than 1";
     }
-    Matrix NN;
+    matrix NN;
     float xi = lower;
     float step_len = (upper-lower)/divs;
     int pnts = divs+1;
@@ -176,11 +152,11 @@ vect bezier::evaluate(float xi){
     return coords; 
 }
 
-Matrix bezier::evaluate(float lower, float upper, float divs){
+matrix bezier::evaluate(float lower, float upper, float divs){
     if (divs < 1){
         throw "Number of divisions can't be less than 1";
     }
-    Matrix pnt_arr;
+    matrix pnt_arr;
     float xi = lower;
     float step_len = (upper-lower)/divs;
     int pnts = divs+1;
@@ -197,7 +173,7 @@ Matrix bezier::evaluate(float lower, float upper, float divs){
 
 
 int main(){
-    Matrix cps;
+    matrix cps;
     cps = {{1,1},{3,2},{2,1}};
     bezier b(cps);
     b.display();
