@@ -9,6 +9,8 @@ PYBIND11_MODULE(bezier, m) {
     m.def("VectDotProduct", &VectDotProduct);
     m.def("RandomMatrix", &RandomMatrix, 
         "Generates the random matrix of size n*m");
+    m.def("ParametricRange", &ParametricRange, 
+        "Returns a vector of parametric range{0,1} with required divisions");
 
     py::class_<bezier>(m, "bezier")
         .def(py::init())

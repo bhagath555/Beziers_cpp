@@ -7,6 +7,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ..)
 # To add pubind11 functions.
 find_package(pybind11 REQUIRED)
 
-file(GLOB PY_SOURCE "*.cpp")
+file(GLOB PYBIND_CPP_SOURCE "*.cpp")
 
-pybind11_add_module(bezier ${PY_SOURCE})
+pybind11_add_module(bezier ${PYBIND_CPP_SOURCE})

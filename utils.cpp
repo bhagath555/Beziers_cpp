@@ -41,3 +41,14 @@ matrix RandomMatrix(int rows, int cols){
     }
     return M;
 }
+
+vect ParametricRange(int divs){
+    vect v;
+    int pnts = divs+1;
+    v.reserve(pnts);
+    for (int  i = 0; i < pnts; i++)
+    {
+        v.emplace_back(float(i)/divs);
+    }
+    return v;
+}

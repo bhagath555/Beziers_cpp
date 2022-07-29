@@ -15,3 +15,5 @@ float VectDotProduct(const vect& v1, const vect& v2);
 
 matrix RandomMatrix(int rows, int cols);
 
+vect ParametricRange(int divs);
+

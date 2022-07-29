@@ -194,7 +194,7 @@ void bezier::display_cps(void){
  */
 void bezier::display(void){
     std::cout << "Bezier curve with degree : " << degree << "\n";
-    std::cout << "Control point coordinateds : \n";
+    std::cout << "Control point coordinates : \n";
     display_cps();
 }
 
