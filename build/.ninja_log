@@ -1,0 +1,5 @@
+# ninja log v5
+4254	6044	6807830123334996	C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd	afd097a9f3d66121
+26	436	6807829673506787	CMakeFiles/bezier.dir/utils.cpp.obj	f377acb6996d69f1
+3	964	6807829678797593	CMakeFiles/bezier.dir/bezier.cpp.obj	811c63694e55fa65
+7	4254	6807830105415976	CMakeFiles/bezier.dir/bezier_binder.cpp.obj	ff85c22b4338ce9d

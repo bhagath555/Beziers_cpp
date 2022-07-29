@@ -1,0 +1,3 @@
+C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build/CMakeFiles/bezier.dir
+C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build/CMakeFiles/edit_cache.dir
+C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build/CMakeFiles/rebuild_cache.dir
