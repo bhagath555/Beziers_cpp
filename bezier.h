@@ -18,7 +18,6 @@ public:
     bezier(int);
     bezier();
     bezier(const matrix& cps_in);
-    ~bezier();
     float ith_basis(float xi, int i);
     vect basis(float xi);
     matrix basis(float start, float end, int divs);
@@ -27,5 +26,6 @@ public:
     void display(void);
     vect evaluate(float xi);
     matrix evaluate(float lower, float upper, int divs);
+    matrix evaluate_crv(int divs);
     matrix get_ctrl_pnts(void);
 };

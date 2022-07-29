@@ -1,16 +1,22 @@
 import matplotlib.pyplot as plt
 import bezier
 
-b = bezier.bezier(2)
-
+# Degree 3 bezier object.
+b = bezier.bezier(3)
+# Printig bezier curve information to console.
 b.display()
-# 
-x = b.evaluate(0,1,50)
 
+# Evaluating points on the bezier curve, with 50 divisions.
+x = b.evaluate_crv(50)
+
+# Accessing control point information from the class.
 cps = b.get_ctrl_pnts()
-print(cps)
+
+# Plotting control net.
 plt.plot(cps[0], cps[1], 'b--', linewidth = '1.5')
 plt.plot(cps[0], cps[1], 'ro')
+# Plotting the curve.
 plt.plot(x[0], x[1], 'k', linewidth = '2')
 
+# plot
 plt.show()

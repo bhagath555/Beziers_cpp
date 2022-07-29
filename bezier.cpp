@@ -1,8 +1,26 @@
+/**
+ * @file bezier.cpp
+ * @author your name (you@domain.com)
+ * @brief This file containing all the code that required to implement bezier class. NOTE: This documentions is still in development.
+ * @version 0.1
+ * @date 2022-07-29
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 
 #include "bezier.h"
 
 
-// i^th basis function.
+/**
+ * @brief Calculates the ith basis function value at give parametric value, xi, of degree p bezier curve.
+ * 
+ * @param p Degree.
+ * @param xi Parametric value in {0, 1}.
+ * @param i Basis function index.
+ * @return (float) Basis function value at xi.
+ */
 float bezier_ith_basis(int p, float xi, int i)
 {
     if (p == 0){
@@ -23,18 +41,32 @@ float bezier_ith_basis(int p, float xi, int i)
     }
 }
 
+/**
+ * @brief Construct a new bezier::bezier object. Bezier degree is user's choice, but random control points coordinates will be generated automatically.
+ * 
+ * @param p Degree of the curve.
+ */
 bezier::bezier(int p)
 {
     degree = p;
     Ctrl_Pnts = RandomMatrix(degree+1, 2);
 }
 
+/**
+ * @brief Construct a new bezier::bezier object. In this object generation, default degree will be considered as 2, and random control points coordinates will be generated automatically.
+ * 
+ */
 bezier::bezier()
 {
     degree = 2;
     Ctrl_Pnts = RandomMatrix(degree+1, 2);
 }
 
+/**
+ * @brief Construct a new bezier::bezier object. Bezier control points are inputs. Each row correspond to a control point and columns consist coordinate values.
+ * 
+ * @param cps_in Bezier control points.
+ */
 bezier::bezier(const matrix& cps_in)
 {
     bool valid = check_ctrl_pnts(cps_in);
@@ -57,6 +89,13 @@ bezier::bezier(const matrix& cps_in)
     }
 }
 
+/**
+ * @brief This functions checks the validity of a input bezier control points array.
+ * 
+ * @param cps_in Matrix, Each row correspond to a control point and columns representing X-Y coodinate values.
+ * @return true If given matrix is valid bezier control net.
+ * @return false If the given matrix is invalid bezier control net.
+ */
 bool bezier::check_ctrl_pnts(const matrix& cps_in){
     int rows = cps_in.size();
     if (rows < 2){
@@ -76,11 +115,23 @@ bool bezier::check_ctrl_pnts(const matrix& cps_in){
     return true;
 }
 
-
+/**
+ * @brief ${i}^{th} basis function value, where i in {0, degree}.
+ * 
+ * @param xi parametric value in {0,1}
+ * @param i basis index in {0, degree}
+ * @return float pth degree ith bezier basis value at xi.
+ */
 float bezier::ith_basis(float xi, int i){
     return bezier_ith_basis(degree, xi, i);
 }
 
+/**
+ * @brief Returns a vector all bezier basis value of degree p bezier curve, at parametric coordinate xi {0,1}. 
+ * 
+ * @param xi Parametric coordinate, should be within {0,1}
+ * @return vect Vector of degree+1 basis function value at xi.
+ */
 vect bezier::basis(float xi){
     vect N;
     N.reserve(degree+1);
@@ -89,6 +140,15 @@ vect bezier::basis(float xi){
     }
     return N;
 }
+
+/**
+ * @brief Calculates the bezier basis function matrix, each row correspond to bezier basis set at each parametric value. First set of basis functions are calculated at parametric value lower, and last set of basis functions are calculated at parametric value upper. Inbetween parametric values unifromly devided based on the number of divsions (divs). 
+ * 
+ * @param lower Lower parametric coordinate.
+ * @param upper Upeer parametric coordinate.
+ * @param divs Number of divisions.
+ * @return matrix Bezier basis matrix, each row correspond to the basis function set at paremetric value.
+ */
 
 matrix bezier::basis(float lower, float upper, int divs)
 {
@@ -111,11 +171,10 @@ matrix bezier::basis(float lower, float upper, int divs)
     return NN;
 }
 
-bezier::~bezier()
-{
-    std::cout << "Class is Destructor \n";
-}
-
+/**
+ * @brief Prints control point coordinate values of bezier object.
+ * 
+ */
 void bezier::display_cps(void){
     // int rows  = Ctrl_Pnts.size();
     // int cols  = Ctrl_Pnts[0].size();
@@ -129,12 +188,22 @@ void bezier::display_cps(void){
     }
 }
 
+/**
+ * @brief Prints the bezier object field information.
+ * 
+ */
 void bezier::display(void){
     std::cout << "Bezier curve with degree : " << degree << "\n";
     std::cout << "Control point coordinateds : \n";
     display_cps();
 }
 
+/**
+ * @brief Evalue the bezier curve coordinates at given parametric coordinate (xi).
+ * 
+ * @param xi Parametric coordinate {0,1}. 
+ * @return vect Vector of size 2. First element correspond to x coordinate and second element correspond to y coordinate.
+ */
 vect bezier::evaluate(float xi){
     vect N = basis(xi);
     vect coords;
@@ -152,6 +221,14 @@ vect bezier::evaluate(float xi){
     return coords; 
 }
 
+/**
+ * @brief Calculates the bezier coordinate values in the given parametric range (lower to upper)
+ * 
+ * @param lower Lower parametric coordinate.
+ * @param upper Upper parametric coordinate.
+ * @param divs Number of divisions between the given prametric limits.
+ * @return matrix Matrix of size (2,divs+1). First row correspond to x coodinate of curve at series of parametric values. Second row correspond to the y coordinate of curve at series of parametric values.
+ */
 matrix bezier::evaluate(float lower, float upper, int divs){
     if (divs < 1){
         throw "Number of divisions can't be less than 1";
@@ -179,6 +256,21 @@ matrix bezier::evaluate(float lower, float upper, int divs){
     return pnt_arr; 
 }
 
+/**
+ * @brief Calculates the bezier curve coordinates at provided number of divsions in range(0,1).
+ * 
+ * @param divs divisions of bezier curve.
+ * @return matrix Bezier curve coordinates matrix.
+ */
+matrix bezier::evaluate_crv(int divs){
+    return evaluate(0,1,divs);
+}
+
+/**
+ * @brief This function returns the control point coordinates matrix (2,no. of control points) of given bezier curve.
+ * 
+ * @return matrix Control net of size (2, degree+1).
+ */
 matrix bezier::get_ctrl_pnts(){
     matrix cps;
     int cp_count = degree+1;

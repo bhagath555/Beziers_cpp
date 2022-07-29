@@ -28,12 +28,12 @@ PYBIND11_MODULE(bezier, m) {
         
         .def("evaluate", static_cast<matrix (bezier::*) (float, float, int)>
             (&bezier::evaluate))
-        
+
+        .def("evaluate_crv", &bezier::evaluate_crv) 
         .def("get_ctrl_pnts", &bezier::get_ctrl_pnts)
         
         .def("display", &bezier::display)
-        // .def("ith_basis", static_cast<float (bezier::*) (float, int)>
-        //      (&bezier::ith_basis))   
+   
     ;
 
 }

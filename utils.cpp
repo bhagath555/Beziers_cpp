@@ -1,5 +1,12 @@
 #include "utils.hpp"
 
+/**
+ * @brief Vector dot product computation.
+ * 
+ * @param v1 Vector 1.
+ * @param v2 Vector 2.
+ * @return float V1.v2
+ */
 float VectDotProduct(const vect& v1, const vect& v2){
     if (v1.size() != v2.size()){
         throw "Vector dot product is not possible with inconsistant vectors\n";
@@ -13,6 +20,13 @@ float VectDotProduct(const vect& v1, const vect& v2){
     return sum;
 }
 
+/**
+ * @brief This function generates a random matrix of required size.
+ * 
+ * @param rows Number of rows.
+ * @param cols Number of columns.
+ * @return matrix Random matrix with required dimensions.
+ */
 matrix RandomMatrix(int rows, int cols){
     matrix M;
     srand(time(0));

@@ -1,5 +1,9 @@
 # ninja log v5
-4254	6044	6807830123334996	C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd	afd097a9f3d66121
-26	436	6807829673506787	CMakeFiles/bezier.dir/utils.cpp.obj	f377acb6996d69f1
-3	964	6807829678797593	CMakeFiles/bezier.dir/bezier.cpp.obj	811c63694e55fa65
 7	4254	6807830105415976	CMakeFiles/bezier.dir/bezier_binder.cpp.obj	ff85c22b4338ce9d
+3	964	6807829678797593	CMakeFiles/bezier.dir/bezier.cpp.obj	811c63694e55fa65
+26	436	6807829673506787	CMakeFiles/bezier.dir/utils.cpp.obj	f377acb6996d69f1
+4254	6044	6807830123334996	C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd	afd097a9f3d66121
+34	407	6807885562796299	CMakeFiles/bezier.dir/utils.cpp.obj	f377acb6996d69f1
+15	776	6807885566580589	CMakeFiles/bezier.dir/bezier.cpp.obj	811c63694e55fa65
+31	4508	6807885603769286	CMakeFiles/bezier.dir/bezier_binder.cpp.obj	ff85c22b4338ce9d
+4508	6272	6807885621452643	C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd	afd097a9f3d66121
