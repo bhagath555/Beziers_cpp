@@ -21,7 +21,7 @@ Bezier curve formulation in CPP with unittests and python binding.
 
 ## Usage:
 Two examples are provided to demonstrate the usage of the binded code. 
-![Usage gif](https://drive.google.com/file/d/1_1UrHkD1lzFdAW-S6-5yuMITfFpESVW7/view?usp=drivesdk)
+![Usage gif](https://github.com/bhagath555/CppLibraries/blob/main/2022-07-29-21-12-36.gif)
 
 1. 1_example.py
 * This is to explain the creation of a pth degree bezier object, calculating the point on a curve, and plotting the actual curve and it's control net.
