@@ -1,15 +1,16 @@
 # Beziers_cpp
  
-This project, mainly focusing on to exploit the preformance of CPP computation and python's easy-in-data visualization, to learn and study the spline geometrical properties. This repository is practical implementation of CPP knowledge I have been aquiering over the last couple of weeks. By this stage, I am pretty confident about my learning. I would like to continue develop this repository in coming days, to make it, a standard spline formulation package. Now is the early stage of the project, as we progress through time, I hope the repository becomes mature and more functionalities will be added to it. 
+This project mainly focused to exploit the preformance of CPP computation and python's easy-in-data visualization, to learn and study the spline geometrical properties. This repository is also a practical implementation of CPP knowledge that I have been aquiering over the last couple of weeks. I would like to continue develop this repository in coming days, and make it a standard spline package that compatible with C++ and Python via Pybind11. Now is the early stage of the project, as we progress through time, I hope the repository becomes mature and more functionalities will be added to it. If you are interested please feel free to provide suggestions and raise issues, 
 
 ### System setup used:
 * Operating System : Windows 10
 * Package manager  : MSYS MinGW
 * Code editor      : VS Code
 
-I have system setup (Windows only) procedure for developing a C/C++ project in following repositories. Please go through it, If you would like to.
-* Link1
-* Link2
+I have system setup (Windows only) procedure for developing a C/C++ project in following repositories. Please go through it, If you would like.
+* [System setup]
+* [gtests]
+* [pybind11]
 
 To summerise this project:
 * Developed bezier curve formulation in CPP.
@@ -17,11 +18,11 @@ To summerise this project:
 * This allows to extract the computational efficiency of C++ and Python's data visualization power.
 
 
-Bezier curve formulation in CPP with unittests and python binding.
+
 
 ## Usage:
 Two examples are provided to demonstrate the usage of the binded code. 
-![Usage gif](https://github.com/bhagath555/thmsgbrt/blob/master/2022-07-29-21-12-36.gif)
+![Usage](https://github.com/bhagath555/thmsgbrt/blob/master/2022-07-29-21-12-36.gif)
 
 1. 1_example.py
 * This is to explain the creation of a pth degree bezier object, calculating the point on a curve, and plotting the actual curve and it's control net.
@@ -55,7 +56,8 @@ plt.show()
 ```
 
 2. 2_example.py 
-* Calculating the basis function values at a particulat parametric value and plotting the basis functions in over parametric space.
+
+Calculating the basis function values at a particulat parametric value and plotting the basis functions in over parametric space.
 ``` python
 import matplotlib.pyplot as plt
 import bezier
@@ -82,3 +84,8 @@ plt.show()
 * Genereting ReadTheDocs format webpage (using Doxygen + Sphinx) from the docstrings of the code. 
 * Writing unittest to test the code.
 
+## Complited tasks:
+* Design basic structure of the project and make simple version with bezier formulation.
+* Add bezier class and required class functionalities with proper docstrings.
+* Creating python binding of bezier class.
+* Add tutorials to explain the bezier modules in python.
