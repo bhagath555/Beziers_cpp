@@ -26,13 +26,13 @@ float bezier_ith_basis(int p, float xi, int i)
 bezier::bezier(int p)
 {
     degree = p;
-    Ctrl_Pnts = RondomMatrix(degree+1, 2);
+    Ctrl_Pnts = RandomMatrix(degree+1, 2);
 }
 
 bezier::bezier()
 {
     degree = 2;
-    Ctrl_Pnts = RondomMatrix(degree+1, 2);
+    Ctrl_Pnts = RandomMatrix(degree+1, 2);
 }
 
 bezier::bezier(const matrix& cps_in)
@@ -152,43 +152,47 @@ vect bezier::evaluate(float xi){
     return coords; 
 }
 
-matrix bezier::evaluate(float lower, float upper, float divs){
+matrix bezier::evaluate(float lower, float upper, int divs){
     if (divs < 1){
         throw "Number of divisions can't be less than 1";
     }
-    matrix pnt_arr;
     float xi = lower;
     float step_len = (upper-lower)/divs;
     int pnts = divs+1;
+    vect coords;
+    matrix pnt_arr;
+    vect x;
+    vect y;
+    x.reserve(pnts);
+    y.reserve(pnts);
     pnt_arr.reserve(2*pnts);
+
     for (int i = 0; i < pnts; i++)
     {
-        vect coords = evaluate(xi);
-        pnt_arr.emplace_back(coords);
+        coords = evaluate(xi);
+        x.emplace_back(coords[0]);
+        y.emplace_back(coords[1]);
         xi = xi + step_len;
     }  
+    pnt_arr.emplace_back(x);
+    pnt_arr.emplace_back(y);
     return pnt_arr; 
 }
 
-
-
-int main(){
+matrix bezier::get_ctrl_pnts(){
     matrix cps;
-    cps = {{1,1},{3,2},{2,1}};
-    bezier b(cps);
-    b.display();
-    vect crds = b.evaluate(0);
-    std::cout << "Coordinates at xi = 0 : ";
-    for (const auto& i : crds)
+    int cp_count = degree+1;
+    cps.reserve(2*cp_count);
+    vect x;x.reserve(cp_count);
+    vect y;y.reserve(cp_count);
+    for (int i = 0; i < Ctrl_Pnts.size(); i++)
     {
-        std::cout << i << "    "; 
+        x.emplace_back(Ctrl_Pnts[i][0]);
+        y.emplace_back(Ctrl_Pnts[i][1]);
+
     }
-    std::cout << "\n";
-    crds = b.evaluate(1);
-    std::cout << "Coordinates at xi = 1 : ";
-    for (const auto& i : crds)
-    {
-        std::cout << i << "    "; 
-    }
-    std::cout << "\n";   
+    
+    cps.emplace_back(x);
+    cps.emplace_back(y);
+    return cps;
 }

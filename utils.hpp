@@ -13,5 +13,5 @@ typedef std::vector<std::vector<float>> matrix;
 
 float VectDotProduct(const vect& v1, const vect& v2);
 
-matrix RondomMatrix(int rows, int cols);
+matrix RandomMatrix(int rows, int cols);
 

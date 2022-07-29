@@ -14,7 +14,6 @@ class bezier
 private:
     int degree;
     matrix Ctrl_Pnts;
-    srand(time(0));
 public:
     bezier(int);
     bezier();
@@ -27,5 +26,6 @@ public:
     bool check_ctrl_pnts(const matrix& cps_in);
     void display(void);
     vect evaluate(float xi);
-    matrix evaluate(float lower, float upper, float divs);
+    matrix evaluate(float lower, float upper, int divs);
+    matrix get_ctrl_pnts(void);
 };
