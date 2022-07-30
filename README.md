@@ -12,11 +12,29 @@ I have system setup (Windows only) procedure for developing a C/C++ project in f
 * [gtests]
 * [pybind11]
 
+## Folder Structure:
+
 To summerise this project:
 * Developed bezier curve formulation in CPP.
 * Used pybind11 to used CPP code in python. 
 * This allows to extract the computational efficiency of C++ and Python's data visualization power.
-
+Beziers_cpp
+    ├───.vscode
+    ├───binding
+    │   ├───bezier_binder.cpp   -> Binding the CPP code in ../src into importabel python module. 
+    │   └───CMakeLists.txt      -> To automate the binding process
+    ├───build                   -> Generated build directory
+    ├───include                 -> All the headers files are stored here
+    │   ├───bezier.h            -> Bezier class and it's declaration
+    │   └───utils.h             -> Utilities declaration
+    ├───src
+    │   ├───bezier.cpp          -> Implementation of the bezier functionalities
+    │   └───utils.cpp           -> Implementation of dependent functions
+    ├───1st_example.py          -> Example tutorial 1
+    ├───2nd_example.py          -> Example tutorial 2
+    ├───bezier.pyd              -> Generated bezier module
+    ├───CMakeLists.txt          -> File that automates the entire building process.
+    └───README.md               -> Markdown file to explain the repository.
 
 
 
@@ -81,10 +99,10 @@ plt.show()
 
 ## Upcoming task:
 * Adding Matrix operations.
-* Genereting ReadTheDocs format webpage (using Doxygen + Sphinx) from the docstrings of the code. 
+* Genereting ReadTheDocs format webpage (using Doxygen + Sphinx) from docstrings. 
 * Writing unittest to test the code.
 
-## Complited tasks:
+## Completed tasks:
 * Design basic structure of the project and make simple version with bezier formulation.
 * Add bezier class and required class functionalities with proper docstrings.
 * Creating python binding of bezier class.
