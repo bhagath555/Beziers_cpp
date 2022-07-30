@@ -10,7 +10,7 @@
  */
 
 
-#include "bezier.h"
+#include "../include/bezier.h"
 
 
 /**

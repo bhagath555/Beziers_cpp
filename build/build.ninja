@@ -40,57 +40,6 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/build/
-# =============================================================================
-# Object build statements for MODULE_LIBRARY target bezier
-
-
-#############################################
-# Order-only phony target for bezier
-
-build cmake_object_order_depends_target_bezier: phony || CMakeFiles/bezier.dir
-
-build CMakeFiles/bezier.dir/bezier.cpp.obj: CXX_COMPILER__bezier_Debug C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.cpp || cmake_object_order_depends_target_bezier
-  DEFINES = -Dbezier_EXPORTS
-  DEP_FILE = CMakeFiles\bezier.dir\bezier.cpp.obj.d
-  FLAGS = -g -fvisibility=hidden
-  INCLUDES = -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include
-  OBJECT_DIR = CMakeFiles\bezier.dir
-  OBJECT_FILE_DIR = CMakeFiles\bezier.dir
-
-build CMakeFiles/bezier.dir/bezier_binder.cpp.obj: CXX_COMPILER__bezier_Debug C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier_binder.cpp || cmake_object_order_depends_target_bezier
-  DEFINES = -Dbezier_EXPORTS
-  DEP_FILE = CMakeFiles\bezier.dir\bezier_binder.cpp.obj.d
-  FLAGS = -g -fvisibility=hidden
-  INCLUDES = -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include
-  OBJECT_DIR = CMakeFiles\bezier.dir
-  OBJECT_FILE_DIR = CMakeFiles\bezier.dir
-
-build CMakeFiles/bezier.dir/utils.cpp.obj: CXX_COMPILER__bezier_Debug C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/utils.cpp || cmake_object_order_depends_target_bezier
-  DEFINES = -Dbezier_EXPORTS
-  DEP_FILE = CMakeFiles\bezier.dir\utils.cpp.obj.d
-  FLAGS = -g -fvisibility=hidden
-  INCLUDES = -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include
-  OBJECT_DIR = CMakeFiles\bezier.dir
-  OBJECT_FILE_DIR = CMakeFiles\bezier.dir
-
-
-# =============================================================================
-# Link build statements for MODULE_LIBRARY target bezier
-
-
-#############################################
-# Link the shared module C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\bezier.pyd
-
-build C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd: CXX_MODULE_LIBRARY_LINKER__bezier_Debug CMakeFiles/bezier.dir/bezier.cpp.obj CMakeFiles/bezier.dir/bezier_binder.cpp.obj CMakeFiles/bezier.dir/utils.cpp.obj | C$:/Users/kisho/AppData/Local/Programs/Python/Python37/libs/python37.lib
-  LANGUAGE_COMPILE_FLAGS = -g
-  LINK_LIBRARIES = C:/Users/kisho/AppData/Local/Programs/Python/Python37/libs/python37.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\bezier.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = "C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\bezier.pyd"
-  TARGET_IMPLIB = libbezier.dll.a
-  TARGET_PDB = bezier.pyd.dbg
-
 
 #############################################
 # Utility command for edit_cache
@@ -116,11 +65,81 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for MODULE_LIBRARY target bezier
+
+
+#############################################
+# Order-only phony target for bezier
+
+build cmake_object_order_depends_target_bezier: phony || binding/CMakeFiles/bezier.dir
+
+build binding/CMakeFiles/bezier.dir/__/src/bezier.cpp.obj: CXX_COMPILER__bezier_Debug C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/src/bezier.cpp || cmake_object_order_depends_target_bezier
+  DEFINES = -Dbezier_EXPORTS
+  DEP_FILE = binding\CMakeFiles\bezier.dir\__\src\bezier.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden
+  INCLUDES = -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include
+  OBJECT_DIR = binding\CMakeFiles\bezier.dir
+  OBJECT_FILE_DIR = binding\CMakeFiles\bezier.dir\__\src
+
+build binding/CMakeFiles/bezier.dir/__/src/utils.cpp.obj: CXX_COMPILER__bezier_Debug C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/src/utils.cpp || cmake_object_order_depends_target_bezier
+  DEFINES = -Dbezier_EXPORTS
+  DEP_FILE = binding\CMakeFiles\bezier.dir\__\src\utils.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden
+  INCLUDES = -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include
+  OBJECT_DIR = binding\CMakeFiles\bezier.dir
+  OBJECT_FILE_DIR = binding\CMakeFiles\bezier.dir\__\src
+
+
+# =============================================================================
+# Link build statements for MODULE_LIBRARY target bezier
+
+
+#############################################
+# Link the shared module bezier.pyd
+
+build bezier.pyd: CXX_MODULE_LIBRARY_LINKER__bezier_Debug binding/CMakeFiles/bezier.dir/__/src/bezier.cpp.obj binding/CMakeFiles/bezier.dir/__/src/utils.cpp.obj | C$:/Users/kisho/AppData/Local/Programs/Python/Python37/libs/python37.lib
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_LIBRARIES = C:/Users/kisho/AppData/Local/Programs/Python/Python37/libs/python37.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = binding\CMakeFiles\bezier.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = bezier.pyd
+  TARGET_IMPLIB = binding\libbezier.dll.a
+  TARGET_PDB = bezier.pyd.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build binding/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\build\binding" && "C:\Program Files\CMake\bin\cmake-gui.exe" -S"C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp" -B"C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\build""
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build binding/edit_cache: phony binding/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build binding/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\build\binding" && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S"C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp" -B"C:\Users\kisho\Dropbox (Personal)\PC\Documents\GitHub\Beziers_cpp\build""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build binding/rebuild_cache: phony binding/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
-build bezier: phony C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd
-
-build bezier.pyd: phony C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd
+build bezier: phony bezier.pyd
 
 # =============================================================================
 # Folder targets.
@@ -130,7 +149,14 @@ build bezier.pyd: phony C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/
 #############################################
 # Folder: C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build
 
-build all: phony C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/bezier.pyd
+build all: phony binding/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build/binding
+
+build binding/all: phony bezier.pyd
 
 # =============================================================================
 # Built-in targets
@@ -139,14 +165,14 @@ build all: phony C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseArguments.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPythonInterp.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/CMakeLists.txt C$:/msys64/mingw64/share/cmake/pybind11/FindPythonLibsNew.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Common.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Config.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11ConfigVersion.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Targets.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.24.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeCXXCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeRCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseArguments.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPythonInterp.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/CMakeLists.txt C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/binding/CMakeLists.txt C$:/msys64/mingw64/share/cmake/pybind11/FindPythonLibsNew.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Common.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Config.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11ConfigVersion.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Targets.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.24.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeCXXCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeRCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseArguments.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPythonInterp.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/CMakeLists.txt C$:/msys64/mingw64/share/cmake/pybind11/FindPythonLibsNew.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Common.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Config.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11ConfigVersion.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Targets.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.24.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeCXXCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeRCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeSystem.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseArguments.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPythonInterp.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/CMakeLists.txt C$:/Users/kisho/Dropbox$ (Personal)/PC/Documents/GitHub/Beziers_cpp/binding/CMakeLists.txt C$:/msys64/mingw64/share/cmake/pybind11/FindPythonLibsNew.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Common.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Config.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11ConfigVersion.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Targets.cmake C$:/msys64/mingw64/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.24.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeCXXCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeRCCompiler.cmake CMakeFiles/3.24.0-rc4/CMakeSystem.cmake: phony
 
 
 #############################################

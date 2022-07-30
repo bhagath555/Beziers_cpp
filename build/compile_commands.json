@@ -1,17 +1,12 @@
 [
 {
   "directory": "C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -Dbezier_EXPORTS -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include -g -fvisibility=hidden -o CMakeFiles\\bezier.dir\\bezier.cpp.obj -c \"C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\bezier.cpp\"",
-  "file": "C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\bezier.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -Dbezier_EXPORTS -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include -g -fvisibility=hidden -o binding\\CMakeFiles\\bezier.dir\\__\\src\\bezier.cpp.obj -c \"C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\src\\bezier.cpp\"",
+  "file": "C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\src\\bezier.cpp"
 },
 {
   "directory": "C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -Dbezier_EXPORTS -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include -g -fvisibility=hidden -o CMakeFiles\\bezier.dir\\bezier_binder.cpp.obj -c \"C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\bezier_binder.cpp\"",
-  "file": "C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\bezier_binder.cpp"
-},
-{
-  "directory": "C:/Users/kisho/Dropbox (Personal)/PC/Documents/GitHub/Beziers_cpp/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -Dbezier_EXPORTS -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include -g -fvisibility=hidden -o CMakeFiles\\bezier.dir\\utils.cpp.obj -c \"C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\utils.cpp\"",
-  "file": "C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\utils.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -Dbezier_EXPORTS -isystem C:/Users/kisho/AppData/Local/Programs/Python/Python37/include -g -fvisibility=hidden -o binding\\CMakeFiles\\bezier.dir\\__\\src\\utils.cpp.obj -c \"C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\src\\utils.cpp\"",
+  "file": "C:\\Users\\kisho\\Dropbox (Personal)\\PC\\Documents\\GitHub\\Beziers_cpp\\src\\utils.cpp"
 }
 ]

@@ -6,13 +6,28 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.23"
 					},
 					"projectIndex" : 0,
-					"source" : ".",
+					"source" : "."
+				},
+				{
+					"build" : "binding",
+					"jsonFile" : "directory-binding-Debug-44ed9d385f4db91ea8d6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "binding",
 					"targetIndexes" : 
 					[
 						0
@@ -25,7 +40,8 @@
 				{
 					"directoryIndexes" : 
 					[
-						0
+						0,
+						1
 					],
 					"name" : "Bezier",
 					"targetIndexes" : 
@@ -37,9 +53,9 @@
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 0,
-					"id" : "bezier::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-bezier-Debug-84c5dac31dc487bb4de4.json",
+					"directoryIndex" : 1,
+					"id" : "bezier::@2d034117cac94b1ea520",
+					"jsonFile" : "target-bezier-Debug-319f9425155346031900.json",
 					"name" : "bezier",
 					"projectIndex" : 0
 				}

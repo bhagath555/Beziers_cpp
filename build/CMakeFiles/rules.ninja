@@ -12,6 +12,14 @@
 # =============================================================================
 
 #############################################
+# Rule for running custom commands.
+
+rule CUSTOM_COMMAND
+  command = $COMMAND
+  description = $DESC
+
+
+#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__bezier_Debug
@@ -28,14 +36,6 @@ rule CXX_MODULE_LIBRARY_LINKER__bezier_Debug
   command = cmd.exe /C "$PRE_LINK && C:\msys64\mingw64\bin\g++.exe $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared -o $TARGET_FILE -Wl,--major-image-version,0,--minor-image-version,0 $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX shared module $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for running custom commands.
-
-rule CUSTOM_COMMAND
-  command = $COMMAND
-  description = $DESC
 
 
 #############################################
