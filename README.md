@@ -2,15 +2,14 @@
  
 This project mainly focused to exploit the preformance of CPP computation and python's easy-in-data visualization, to learn and study the spline geometrical properties. This repository is also a practical implementation of CPP knowledge that I have been aquiering over the last couple of weeks. I would like to continue develop this repository in coming days, and make it a standard spline package that compatible with C++ and Python via Pybind11. Now is the early stage of the project, as we progress through time, I hope the repository becomes mature and more functionalities will be added to it. If you are interested please feel free to provide suggestions and raise issues, 
 
-### System setup used:
+## System setup used:
 * Operating System : Windows 10
 * Package manager  : MSYS MinGW
 * Code editor      : VS Code
 
 I have system setup (Windows only) procedure for developing a C/C++ project in following repositories. Please go through it, If you would like.
-* [System setup]
-* [gtests]
-* [pybind11]
+* [SystemSetup and gtest](https://github.com/bhagath555/learn-cpp-gtest#setting-up)
+* [pybind11](https://github.com/bhagath555/Learn_cpp_pybind11#system-setup)
 
 ## Folder Structure:
 
@@ -18,6 +17,7 @@ To summerise this project:
 * Developed bezier curve formulation in CPP.
 * Used pybind11 to used CPP code in python. 
 * This allows to extract the computational efficiency of C++ and Python's data visualization power.
+``` 
 Beziers_cpp
     ├───.vscode
     ├───binding
@@ -35,14 +35,15 @@ Beziers_cpp
     ├───bezier.pyd              -> Generated bezier module
     ├───CMakeLists.txt          -> File that automates the entire building process.
     └───README.md               -> Markdown file to explain the repository.
-
+```
 
 
 ## Usage:
 Two examples are provided to demonstrate the usage of the binded code. 
+
 ![Usage](https://github.com/bhagath555/thmsgbrt/blob/master/2022-07-29-21-12-36.gif)
 
-1. 1_example.py
+### 1_example.py
 * This is to explain the creation of a pth degree bezier object, calculating the point on a curve, and plotting the actual curve and it's control net.
 ``` python
 import matplotlib.pyplot as plt
@@ -73,7 +74,7 @@ plt.plot(x[0], x[1], 'k', linewidth = '2')
 plt.show()
 ```
 
-2. 2_example.py 
+### 2_example.py 
 
 Calculating the basis function values at a particulat parametric value and plotting the basis functions in over parametric space.
 ``` python
@@ -107,3 +108,8 @@ plt.show()
 * Add bezier class and required class functionalities with proper docstrings.
 * Creating python binding of bezier class.
 * Add tutorials to explain the bezier modules in python.
+
+## Final Note
+Please feel free to suggest your ideas to improve this project via [issues section](https://github.com/bhagath555/Beziers_cpp/issues).
+
+Bhagath Mamindlapelly.
